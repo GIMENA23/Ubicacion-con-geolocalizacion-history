@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocalización con Historial y Mapa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha20a1-PZ7c2bX5q8Q+gR5h2X5/h5h5h5h2h5Q=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha20a1-PZ7c2bX5q8Q+gR5h2X5/h5h5h5h2h5Q=" crossorigin=""></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7g26R36L+0Jm0Y+d5D5s5Z5d5R5+d5D5r5g5Z5d5R5+d5D5r5g5Z5d5R5+d5D5r5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Ubicación</h1>
+        <p class="subtitle">Utilizando la API de Geolocalización e History</p>
+        <button id="initial-btn" onclick="getInitialLocation()">📍 Ver Ubicación</button>
+        <div class="btn-group" id="tracking-buttons">
+            <button class="btn btn-start" onclick="startTracking()">Iniciar Recorrido</button>
+            <button class="btn btn-stop" onclick="stopTracking()">Detener Recorrido</button>
+            <button class="btn btn-clear" onclick="clearHistory()">Limpiar Historial</button>
+        </div>
+        
+        <div class="content-display" id="main-content">
+            <div class="main-display">
+                <div id="output" class="display-box">
+                    <p style="text-align: center; width: 100%; color: var(--secondary-color);">Cargando...</p>
+                </div>
+                <div id="map-container" class="display-box">
+                    <div id="map"></div>
+                </div>
+            </div>
+            
+            <div id="history-section">
+                <h2 class="output-title">Historial de Recorrido</h2>
+                <ul id="history-list">
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 90%; 
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+p.subtitle {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.btn-group {
+    display: none;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+#initial-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Colores personalizados de botones */
+.btn-start {
+    background-color: var(--success-color);
+}
+.btn-start:hover {
+    background-color: #1e7e34;
+}
+
+.btn-stop {
+    background-color: var(--danger-color);
+}
+.btn-stop:hover {
+    background-color: #c82333;
+}
+
+.btn-clear {
+    background-color: var(--secondary-color);
+}
+.btn-clear:hover {
+    background-color: #5a6268;
+}
+
+/* Estilos de los íconos dentro de los botones */
+.btn i {
+    margin-right: 8px;
+}
+
+/* Flexbox para los recuadros de ubicación y mapa */
+.content-display {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.main-display {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .main-display {
+        flex-direction: row;
+    }
+}
+
+.display-box {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid var(--secondary-color);
+    min-height: 150px;
+    text-align: left;
+    flex: 1;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+#output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: border-color 0.4s;
+}
+
+#output.success {
+    border-color: var(--success-color);
+}
+
+#output.error {
+    border-color: var(--danger-color);
+}
+
+.output-title {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.info-item {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.info-label {
+    font-weight: 700;
+    color: #333;
+}
+
+.info-value {
+    color: var(--secondary-color);
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+}
+
+#map-container {
+    width: 100%;
+    height: 300px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#history-section {
+    display: none;
+    margin-top: 20px;
+}
+
+#history-list {
+    margin-top: 1.5rem;
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+    border-top: 1px solid #ccc;
+    padding-top: 1.5rem;
+}
+
+#history-list li {
+    background-color: var(--bg-color);
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
